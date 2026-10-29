@@ -2,7 +2,7 @@
 
 ## Pré-requisitos
 
-- Windows 10 ou 11, conta da usuária que fará as consultas e conexão com a internet.
+- Windows 10 ou 11, conta da usuário que fará as consultas e conexão com a internet.
 - Microsoft Edge instalado.
 - Certificado digital válido, com chave privada, disponível no armazenamento **Pessoal** da mesma conta Windows que executará a automação.
 - Pacote de implantação com EXE, ou Python 3.12+ para compilar o código-fonte durante a instalação.
