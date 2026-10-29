@@ -7,7 +7,7 @@
 - Certificado digital válido, com chave privada, disponível no armazenamento **Pessoal** da mesma conta Windows que executará a automação.
 - Pacote de implantação com EXE, ou Python 3.12+ para compilar o código-fonte durante a instalação.
 
-O computador precisa estar ligado e a usuário precisa entrar no Windows. A tarefa usa o certificado e o perfil dessa sessão; não executa antes do logon. Se o horário diário for perdido, o gatilho de logon inicia uma nova tentativa. Se faltar internet, o processo aguarda dentro do limite definido.
+O computador precisa estar ligado e o usuário precisa entrar no Windows. A tarefa usa o certificado e o perfil dessa sessão; não executa antes do logon. Se o horário diário for perdido, o gatilho de logon inicia uma nova tentativa. Se faltar internet, o processo aguarda dentro do limite definido.
 
 ## Instalar na máquina de destino
 
