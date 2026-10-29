@@ -1,0 +1,10 @@
+/__pycache__/
+/build/
+/dist/
+/logs/
+/estado.json
+/Automacao Notas Sefaz.exe
+/Automacao Notas Sefaz.spec
+/config.usuario.json
+/certificado_usuario.json
+/*.pfx

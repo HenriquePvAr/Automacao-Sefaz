@@ -1,0 +1,25 @@
+AUTOMACAO DE NOTAS SEFAZ-AM
+
+INSTALACAO
+1. Execute instalar.bat na conta Windows que usara a automacao.
+2. Informe a inscricao estadual quando solicitado.
+3. Se o executavel nao estiver na pasta, o instalador tentara compilar os
+   fontes. Essa compilacao exige Python 3.12 ou superior e acesso a internet.
+4. Um pacote de implantacao com o executavel pronto dispensa Python no PC.
+5. Um certificado valido ja instalado na conta sera reutilizado. Se o pacote
+   protegido incluir um PFX e o certificado estiver ausente, o instalador pedira
+   a senha apenas durante a importacao.
+6. Feche e abra o Edge apos a configuracao do certificado.
+
+USO
+- Dois cliques no atalho Automacao Notas Sefaz.exe iniciam consulta manual.
+- A tarefa RPA_SEFAZ_Download_XML executa no horario configurado e no logon.
+- Os ZIP sao preservados em Area de Trabalho\Notas sefaz\nota DD-MM-AAAA.
+- O fluxo baixa XML da SEFAZ-AM e nao envia documentos ao Sankhya.
+
+CONFIGURACAO E LOGS
+- Configuracao ativa: %LOCALAPPDATA%\RPA_SEFAZ\config.json
+- Horario diario: campo hora_diaria, formato HH:mm. Depois de editar, execute
+  agendar_tarefa.bat para atualizar a tarefa do Windows.
+- Logs e estado: %LOCALAPPDATA%\RPA_SEFAZ\logs e estado.json.
+- Documentacao detalhada: ..\README.md e ..\docs\.

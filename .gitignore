@@ -1,0 +1,19 @@
+# Índice local de apoio à navegação do repositório.
+/.basinfy/
+
+# Versões e pacotes antigos mantidos na pasta de trabalho.
+/rpa_sefaz_am_edge_normal_v19_*/
+/rpa_sefaz_am_edge_normal_v19_*.zip
+/Automacao_Notas_Sefaz_instalacao_*.zip
+
+# Dados locais de implantação nunca fazem parte do repositório.
+/aplicativo/Automacao Notas Sefaz.exe
+/aplicativo/config.usuario.json
+/aplicativo/certificado_usuario.json
+/aplicativo/certificado_usuario.pfx
+/aplicativo/estado.json
+/aplicativo/logs/
+/aplicativo/build/
+/aplicativo/dist/
+/aplicativo/__pycache__/
+/aplicativo/*.spec

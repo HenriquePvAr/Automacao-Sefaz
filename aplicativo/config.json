@@ -1,0 +1,21 @@
+{
+  "sefaz_url": "https://online.sefaz.am.gov.br/inicioDte.asp",
+  "sefaz_login_url": "https://online.sefaz.am.gov.br/dte/loginSSL.asp",
+  "sankhya_url": "https://sankhya.example.invalid",
+  "empresa_inscricao_estadual": "",
+  "navegador": "edge",
+  "edge_profile_directory": "",
+  "chrome_profile_directory": "",
+  "downloads_dir": "",
+  "sankhya_portal_importacao_url": "",
+  "sankhya_periodo_fim_mes": 12,
+  "sankhya_periodo_fim_dia": 31,
+  "hora_diaria": "07:30",
+  "aguardar_internet_horas": 168,
+  "modo_producao_habilitado": false,
+  "aguardar_certificado_segundos": 120,
+  "aguardar_painel_dte_segundos": 25,
+  "aguardar_consulta_xml_segundos": 35,
+  "aguardar_download_segundos": 180,
+  "intervalo_apos_navegar_segundos": 3
+}
