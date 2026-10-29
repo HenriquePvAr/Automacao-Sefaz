@@ -34,9 +34,9 @@ flowchart TD
     R --> S[Atualizar estado e registrar conclusão]
 ```
 
-## Modelo orientado a objetos
+## Componentes e relações
 
-O núcleo concentra a automação em uma classe de infraestrutura e funções de domínio pequenas. Essa divisão dá um ponto claro para substituir ou depurar a interação com o Edge sem misturar cada passo de negócio com o agendamento.
+O diagrama mostra qual parte controla o navegador, qual conduz as etapas da SEFAZ e onde ficam os resultados locais. O fluxo manual exibe o progresso; o Agendador do Windows inicia a mesma consulta em segundo plano.
 
 ```mermaid
 classDiagram
@@ -45,13 +45,12 @@ classDiagram
       +navigate(url)
       +focus()
       +click_sefaz_banner()
-      +click_xml_with_calibrated_mouse()
+      +try_click_xml_menu_physical()
+      +click_xml_with_visual_template()
       +field(names, label, value)
       +close_owned_window_if_safe()
     }
-    class ErroSeguro {
-      +motivo: str
-    }
+    class ErroSeguro
     class Configuracao {
       +sefaz_url: str
       +empresa_inscricao_estadual: str
@@ -89,13 +88,7 @@ classDiagram
     FluxoSEFAZ ..> Configuracao : recebe datas e parâmetros
 ```
 
-### Princípios de projeto aplicados
-
-- **Encapsulamento:** `NavegadorNormal` mantém a janela criada pela automação e suas operações, sem manipular as janelas pessoais do usuário.
-- **Responsabilidade única:** funções separadas calculam períodos, validam o ZIP, registram o estado, identificam o painel e operam a consulta.
-- **Abstração:** o fluxo de negócio chama métodos como `field` e `click_sefaz_banner`, sem repetir detalhes de teclado, DPI e UI Automation.
-- **Falha segura:** `ErroSeguro` interrompe a rotina quando o alvo não é único, a página não corresponde ao domínio/caminho esperado ou o clique não pode ser confirmado.
-- **Injeção de configuração:** URL, inscrição, horários e limites são lidos de `config.json`, em vez de ficarem fixos no fluxo.
+`NavegadorNormal` opera apenas a janela criada pela automação e deixa as janelas pessoais do usuário intactas. As funções de consulta confirmam cada tela antes de avançar; `ErroSeguro` encerra o fluxo quando o alvo ou a página não podem ser identificados. Os endereços, a inscrição estadual, os horários e os limites vêm da configuração local.
 
 ## Organização dos módulos
 
